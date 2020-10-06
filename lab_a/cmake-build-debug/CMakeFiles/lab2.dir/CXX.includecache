@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/airat/labs/3 sem/lab2/X16.h
+C:/Users/airat/labs/3 sem/lab2/lab_a/X16.cpp
+X16.h
+C:/Users/airat/labs/3 sem/lab2/lab_a/X16.h
+cstdlib
+-
+cstring
+-
+cerrno
+-
+
+C:/Users/airat/labs/3 sem/lab2/lab_a/X16.h
 iostream
 -
 
-C:/Users/airat/labs/3 sem/lab2/main.cpp
+C:/Users/airat/labs/3 sem/lab2/lab_a/main.cpp
 X16.h
-C:/Users/airat/labs/3 sem/lab2/X16.h
+C:/Users/airat/labs/3 sem/lab2/lab_a/X16.h
 iostream
 -
 

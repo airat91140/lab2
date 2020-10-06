@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
-    X16 a((char *)"0abc"), b((char *)"0545");
-    cout<<a - b<<endl;
+    X16 a;
+    cin >> a;
+    a.print(cout, a);
 }
