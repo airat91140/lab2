@@ -86,6 +86,12 @@
 		<Unit filename="C:/Users/airat/labs/3 sem/lab2/lab_a/X16.h">
 			<Option target="lab2"/>
 		</Unit>
+		<Unit filename="C:/Users/airat/labs/3 sem/lab2/lab_a/functions.cpp">
+			<Option target="lab2"/>
+		</Unit>
+		<Unit filename="C:/Users/airat/labs/3 sem/lab2/lab_a/functions.h">
+			<Option target="lab2"/>
+		</Unit>
 		<Unit filename="C:/Users/airat/labs/3 sem/lab2/lab_a/main.cpp">
 			<Option target="lab2"/>
 		</Unit>

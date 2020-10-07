@@ -3,11 +3,13 @@
 
 #include <iostream>
 
-const int N = 30;
+const int N = 10;
 
 using namespace std;
 
 void dopoln(const unsigned char [N], int, unsigned char [N]);
+
+int max(int, int);
 
 class X16 {
 private:
@@ -29,7 +31,7 @@ public:
 
     ~X16();
 
-    ostream & print(ostream &); //вывод числа
+    ostream &print(ostream &); //вывод числа
 
     istream &input(istream &); //ввод числа в виде строки
 

@@ -4,6 +4,11 @@
 CMakeFiles/lab2.dir/X16.cpp.obj: ../X16.cpp
 CMakeFiles/lab2.dir/X16.cpp.obj: ../X16.h
 
+CMakeFiles/lab2.dir/functions.cpp.obj: ../X16.h
+CMakeFiles/lab2.dir/functions.cpp.obj: ../functions.cpp
+CMakeFiles/lab2.dir/functions.cpp.obj: ../functions.h
+
 CMakeFiles/lab2.dir/main.cpp.obj: ../X16.h
+CMakeFiles/lab2.dir/main.cpp.obj: ../functions.h
 CMakeFiles/lab2.dir/main.cpp.obj: ../main.cpp
 
