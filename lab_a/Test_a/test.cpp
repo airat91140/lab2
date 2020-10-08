@@ -100,23 +100,6 @@ TEST(X16Constructor, TestException)
 	ASSERT_ANY_THROW(X16("G"));
 	ASSERT_ANY_THROW(X16("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 }
-/*
-TEST(X16set, TestSet)
-{
-	X16 a;
-	a.set_length(12);
-	ASSERT_EQ(12, a.get_length());
-	a.set_line(3, 5);
-	ASSERT_EQ(3, a.get_line().k);
-	ASSERT_EQ(5, a.get_line().b);
-}
-
-TEST(X16set, TestSetexceptions)
-{
-	X16 a;
-	ASSERT_ANY_THROW(a.set_length(-12));
-	ASSERT_ANY_THROW(a.set_length(0));
-}
 
 TEST(X16Functions, TestFunctions)
 {
