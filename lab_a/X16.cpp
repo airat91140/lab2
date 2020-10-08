@@ -78,8 +78,8 @@ X16::X16(char *num) {
             ++j;
             len += 2; //увеличиваем длину числв
         } else { //случай когда остался только один символ
-            if (!(num[i] >= 'A' && num[i] <= 'Z' ||
-                  num[i] >= 'a' && num[i] <= 'z' ||
+            if (!(num[i] >= 'A' && num[i] <= 'F' ||
+                  num[i] >= 'a' && num[i] <= 'f' ||
                   num[i] >= '0' && num[i] <= '9'))
                 throw invalid_argument("Wrong string"); //проверка правильности символа
             tmp[1] = num[i];
@@ -123,7 +123,7 @@ X16 X16::add(X16 sec) {
     dopoln(sec.getnumber(), sec.getlen(), b);
     unsigned char res[N], res2[N], perenos = 0;
     for (int i = N - 1; i >= 0; --i) {
-        unsigned char fig, sum;
+        unsigned char fig = 0, sum;
         for (int j = 0; j < 8; ++j) { //внутри байта складываем каждый бит по отдельности
             sum = (a[i] ^ b[i] ^ perenos) & 1; //формируем сумму двух битов
             perenos = ((a[i] & b[i]) | (perenos & (a[i] ^ b[i]))) & 1; //формируем единицу переноса
