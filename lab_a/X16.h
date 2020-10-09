@@ -9,7 +9,6 @@ using namespace std;
 
 void dopoln(const unsigned char [N], int, unsigned char [N]);
 
-int max(int, int);
 
 class X16 {
 private:

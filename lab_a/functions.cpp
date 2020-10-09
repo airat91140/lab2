@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+
 template<class T>
 void get_num(T &a) {
     while (true) {

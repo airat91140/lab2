@@ -176,6 +176,7 @@ X16 X16::add(X16 sec) {
     return result;
 }
 
+
 X16 X16::subtract(X16 sec) {
     if (sec.len & 1) //нечетное количество символов
         (sec.number[(N * 2 - sec.len) / 2]) ^= 0x08; //меняем знаковый бит на противоположный

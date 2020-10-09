@@ -53,6 +53,7 @@ TEST(X16Constructor, InitNumConstructors)
 	ASSERT_EQ(0xeb, a6.getnumber()[N - 1]);
 }
 
+
 TEST(X16Constructor, InitCharConstructors)
 {
 	X16 a2("3");

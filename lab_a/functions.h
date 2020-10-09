@@ -3,6 +3,7 @@
 
 #include "X16.h"
 
+
 __declspec(selectany) const char *msgs[] = {"0. Quit",
                                             "1. Set number",
                                             "2. Print number",

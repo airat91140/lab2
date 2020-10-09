@@ -403,6 +403,6 @@ MigrationBackup/
 
 **/*.sln
 
-**/*.CMakeList.txt
+**/CMakeList.txt
 
 **/*.filters
