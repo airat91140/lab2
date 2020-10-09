@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cerrno>
+#include <cassert>
 
 X16::X16() { //по-умолчанию нуль
     this->len = 1;
@@ -49,6 +50,7 @@ X16::X16(const long num) {
     }
 }
 
+
 X16::X16(char *num) {
     for (int i = 0; i < N; ++i) { //иницализируем пустой массив из нулей
         number[i] = 0;
@@ -58,8 +60,7 @@ X16::X16(char *num) {
         throw invalid_argument("Too long string");
     if (strlen(num) < 1)
         throw invalid_argument("Too short string");
-    for (int i = strlen(num) - 1, j = 1;
-         i >= 0; i -= 2) { //идем в цикле с конца строки, j нужно для контроляв какой байт записывать
+    for (long i = strlen(num) - 1, j = 1; i >= 0; i -= 2) { //идем в цикле с конца строки, j нужно для контроляв какой байт записывать
         char tmp[2];
         if (i > 0) { //случай когда есть возможность взять два символа строки
             if (!((num[i - 1] >= 'A' && num[i - 1] <= 'F' ||
@@ -106,7 +107,13 @@ ostream &X16::print(ostream &out) {
 }
 
 istream &X16::input(istream &in) {
-    char name[N];
+    char name[N * 2];
+   /* in.getline(name, N * 2);
+    if (!in.good()) {
+        in.clear();
+        in.ignore(32767, '\n');
+        throw invalid_argument("Wrong string");
+    }*/
     in >> name;
     X16 num(name);
     *this = num;
@@ -170,14 +177,19 @@ X16 X16::add(X16 sec) {
 }
 
 X16 X16::subtract(X16 sec) {
-    if (len & 1) //нечетное количество символов
-        (sec.number[(N * 2 - len) / 2]) ^= 0x08; //меняем знаковый бит на противоположный
+    if (sec.len & 1) //нечетное количество символов
+        (sec.number[(N * 2 - sec.len) / 2]) ^= 0x08; //меняем знаковый бит на противоположный
     else
-        (sec.number[(N * 2 - len) / 2]) ^= 0x80;
+        (sec.number[(N * 2 - sec.len) / 2]) ^= 0x80;
     return this->add(sec);
 }
 
+
+
 X16 X16::Lshift(int am) {
+    assert(len > 0);
+    if (am < 0)
+        throw invalid_argument("Wrong argument");
     unsigned char sign = getsign();
     for (int i = 0; i < am; ++i) {
         unsigned char tmpl = 0, tmpr = 0;
@@ -210,6 +222,8 @@ X16 X16::Lshift(int am) {
 }
 
 X16 X16::Rshift(int am) {
+    if (am < 0)
+        throw invalid_argument("Wrong argument");
     unsigned char sign = getsign();
     if (len & 1) { //находим модуль числа, предварительно сохранив его знак
         number[(N * 2 - len) / 2] &= 0xf7;
@@ -272,7 +286,7 @@ char X16::getsign() {
 }
 
 bool X16::isEven() {
-    return number[N - 1] & 1;
+    return !(number[N - 1] & 1);
 }
 
 int X16::compare(X16 sec) { // 1 - левый больше, -1 - правый больше, 0 одинаковы
@@ -288,7 +302,11 @@ int X16::compare(X16 sec) { // 1 - левый больше, -1 - правый б
     }
     if (this->len & 1) //находим модули этих чисел, так как знаки у низх обязательно одиноковые
         num1[(N * 2 - this->len) / 2] &= 0xf7;
+    else
+        num1[(N * 2 - this->len) / 2] &= 0x7f;
     if (sec.len & 1)
+        num2[(N * 2 - sec.len) / 2] &= 0xf7;
+    else
         num2[(N * 2 - sec.len) / 2] &= 0x7f;
     for (int i = 0; i < N; ++i) { //сверяем числа побайтно
         if (num1[i] > num2[i]) {

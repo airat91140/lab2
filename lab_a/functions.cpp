@@ -83,23 +83,34 @@ int Subtract(X16 &num1) {
 int LShift(X16 &num) {
     int am;
     cout << "Enter how many shifts do you want" << endl;
-    get_num(am);
-    num.Lshift(am);
-    cout << "The result is:" << endl;
-    num.print(cout);
-    cout << endl;
-    return 1;
+    get_num(am); try {
+        num.Lshift(am);
+        cout << "The result is:" << endl;
+        num.print(cout);
+        cout << endl;
+        return 1;
+    }
+    catch (exception& br) {
+        cout << br.what() << endl;
+        return 1;
+    }
 }
 
 int RShift(X16 &num) {
     int am;
     cout << "Enter how many shifts do you want" << endl;
     get_num(am);
-    num.Rshift(am);
-    cout << "The result is:" << endl;
-    num.print(cout);
-    cout << endl;
-    return 1;
+    try {
+        num.Rshift(am);
+        cout << "The result is:" << endl;
+        num.print(cout);
+        cout << endl;
+        return 1;
+    }
+    catch (exception& br) {
+        cout << br.what() << endl;
+        return 1;
+    }
 }
 
 int Compare(X16 &num1) {
@@ -135,7 +146,7 @@ int Compare(X16 &num1) {
 }
 
 int IsEven(X16 &num) {
-    if (num.isEven())
+    if (!num.isEven())
         cout << "It is not even" << endl;
     else
         cout << "It is even" << endl;

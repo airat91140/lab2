@@ -8,5 +8,7 @@
     <TestDuration Test="X16Constructor.InitNumConstructors" Duration="1" />
     <TestDuration Test="X16Constructor.InitCharConstructors" Duration="1" />
     <TestDuration Test="X16Constructor.TestException" Duration="1" />
+    <TestDuration Test="X16Functions.TestFunctions" Duration="1" />
+    <TestDuration Test="X16Functions.TestExcepttions" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

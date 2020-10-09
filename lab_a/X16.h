@@ -14,7 +14,8 @@ int max(int, int);
 class X16 {
 private:
     int len; //длина числа
-    unsigned char number[N];//само число, в каждом байте - две цифры
+    unsigned char number[N] = {0};
+    //само число, в каждом байте - две цифры
 
     void correctlen(); //корректирование длинны числа
 

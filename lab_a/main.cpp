@@ -9,6 +9,7 @@ int main() {
     char *errmsg = (char *) "";
     X16 num;
     cout << "Enter your number:" << endl;
+    (X16(20).add(X16(99080))).print(cout);
     do {
         cout << errmsg;
         errmsg = (char *) "You are wrong. Repeat, please!\n";
