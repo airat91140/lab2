@@ -393,16 +393,16 @@ MigrationBackup/
 *.out
 *.app
 
-**.idea
+**/*.idea
 
-*.config
+**/*.config
 
-**.vcxproj
+**/*.vcxproj
 
 **/cmake-build-debug
 
-.sln
+**/*.sln
 
-.CMakeList.txt
+**/*.CMakeList.txt
 
-.filters
+**/*.filters
