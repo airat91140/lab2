@@ -1,2 +1,0 @@
-C:\Users\airat\labs\3 sem\lab2\lab_a\x64\Debug\lab2_a.exe
-C:\Users\airat\labs\3 sem\lab2\lab_a\x64\Debug\lab2_a.pdb
