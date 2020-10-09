@@ -401,8 +401,8 @@ MigrationBackup/
 
 **/cmake-build-debug
 
-**/sln
+.sln
 
-**.CMakeList.txt
+.CMakeList.txt
 
-**.filters
+.filters
