@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="lab2" targetName="lab2" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b1ccbb17-927b-432d-b029-7d180cd8a96d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/Solution.VC.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/1568cc7c9ba3492c/X16.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/TestStore/0/000.testlog" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/TestStore/0/000.testlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/40276cd2ddc1ec05/MAIN.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/40276cd2ddc1ec05/MAIN.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/5b05def68759909b/FUNCTIONS.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/5b05def68759909b/FUNCTIONS.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/68e5661f28558195/X16.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/.vs/lab2_a/v16/ipch/AutoPCH/68e5661f28558195/X16.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/Test_a/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/Test_a/test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/Test_a.log" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/Test_a.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/Test_a.tlog/Test_a.read.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/Test_a.tlog/Test_a.read.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/Test_a.tlog/Test_a.write.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/Test_a.tlog/Test_a.write.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/test.obj" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/test.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/Test_a/x64/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/X16.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/X16.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/cmake-build-debug/CMakeFiles/lab2.dir/X16.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/cmake-build-debug/CMakeFiles/lab2.dir/X16.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/cmake-build-debug/CMakeFiles/lab2.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/cmake-build-debug/CMakeFiles/lab2.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/cmake-build-debug/CMakeFiles/lab2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/cmake-build-debug/CMakeFiles/lab2.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/cmake-build-debug/lab2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/cmake-build-debug/lab2.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/functions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.exe.gta.testdurations" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.exe.gta.testdurations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/Test_a.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/X16.obj" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/X16.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/functions.obj" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/functions.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/lab2_a.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab_a/x64/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/lab_a/x64/Debug/vc142.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iEWNiD00hxjcaJCiLhJigYF9FO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lab_a/CMakeLists.txt" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.cidr.embedded.config" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\airat\labs\3 sem\lab2\lab_a" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="lab2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab2" TARGET_NAME="lab2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab2" RUN_TARGET_NAME="lab2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1ccbb17-927b-432d-b029-7d180cd8a96d" name="Default Changelist" comment="" />
+      <created>1601473194424</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601473194424</updated>
+      <workItem from="1601473199129" duration="13151000" />
+      <workItem from="1601555401770" duration="23316000" />
+      <workItem from="1601630086847" duration="2348000" />
+      <workItem from="1601632849149" duration="13568000" />
+      <workItem from="1601717142223" duration="2363000" />
+      <workItem from="1601819543300" duration="92000" />
+      <workItem from="1601839795116" duration="5251000" />
+      <workItem from="1601921121786" duration="248000" />
+      <workItem from="1601921495954" duration="9444000" />
+      <workItem from="1601931138379" duration="182000" />
+      <workItem from="1601968410160" duration="5606000" />
+      <workItem from="1601999117770" duration="18817000" />
+      <workItem from="1602057233581" duration="7000" />
+      <workItem from="1602076021327" duration="10032000" />
+      <workItem from="1602097983760" duration="157000" />
+      <workItem from="1602143326389" duration="148000" />
+      <workItem from="1602167151772" duration="1146000" />
+      <workItem from="1602233403164" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1601493202405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601493202405" />
+    <state x="1048" y="58" key="#xdebugger.evaluate" timestamp="1602167451049">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1048" y="58" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1602167451049" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602143411305">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602143411305" />
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state width="1493" height="255" key="GridCell.Tab.0.center" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state width="1493" height="255" key="GridCell.Tab.0.left" timestamp="1602175769830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602175769830" />
+    <state width="1493" height="255" key="GridCell.Tab.0.right" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state width="1493" height="255" key="GridCell.Tab.1.bottom" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state width="1493" height="255" key="GridCell.Tab.1.center" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state width="1493" height="255" key="GridCell.Tab.1.left" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state width="1493" height="255" key="GridCell.Tab.1.right" timestamp="1602175769831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602175769831" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1602143432203">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602143432203" />
+    <state x="319" y="66" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601562763162">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="319" y="66" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1601562763162" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1602011160197">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602011160197" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602143465426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602143465426" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/lab_a/X16.cpp</url>
+          <line>168</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/lab_a/X16.cpp</url>
+          <line>179</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="this-&gt;number" />
+        <watch expression="N - 1 - j / 2" language="ObjectiveC" />
+        <watch expression="num[i]" language="ObjectiveC" />
+        <watch expression="dop[i]" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
