@@ -8,6 +8,7 @@ void get_num(T &a) {
     while (true) {
         cin >> a;
         if (cin.good()) {
+            cin.ignore();
             return;
         }
         cout << "You are wrong. Repeat, please." << endl;
@@ -31,6 +32,7 @@ int dialog(const char *qmsgs[], int M) {
 }
 
 int SetNum(X16 &num) {
+    cout << "Input number" << endl;
     try {
         num.input(cin);
     }

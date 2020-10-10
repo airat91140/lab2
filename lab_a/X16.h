@@ -9,7 +9,6 @@ using namespace std;
 
 void dopoln(const unsigned char [N], int, unsigned char [N]);
 
-
 class X16 {
 private:
     int len; //длина числа
@@ -18,10 +17,17 @@ private:
 
     void correctlen(); //корректирование длинны числа
 
-    inline char getsign(); //получение знака числа  0 - положительный, любой другой - отрицательный
+    inline unsigned char getsign(); //получение знака числа  0 - положительный, любой другой - отрицательный
 
     void setmas(const unsigned char[N]); //установление своего массива
 
+    static void setSign(unsigned char[N]);
+
+    const unsigned char (&getnumber())[N] { //получение самого числа как массива чисел
+        return number;
+    };
+
+    int getlen() const; //получение длины строки
 public:
     X16();//конструктор по умолчанию
 
@@ -42,12 +48,6 @@ public:
     X16 Lshift(int); //сдвиг влево на int
 
     X16 Rshift(int); //сдвиг вправо на int
-
-    int getlen() const; //получение длины строки
-
-    const unsigned char (&getnumber())[N] { //получение самого числа как массива чисел
-        return number;
-    };
 
     bool isEven(); //проверка на четность
 
