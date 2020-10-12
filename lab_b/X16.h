@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-const int N = 4;
+const int N = 10;
 
 using namespace std;
 
@@ -11,43 +11,47 @@ void dopoln(const unsigned char [N], int, unsigned char [N]);
 
 class X16 {
 private:
-    int len;
-    unsigned char number[N];
+    int len; //длина числа
+    unsigned char number[N] = {0};
+    //само число, в каждом байте - две цифры
 
-    void correctlen();
+    void correctlen(); //корректирование длинны числа
 
-    inline char getsign();
+    inline unsigned char getsign(); //получение знака числа  0 - положительный, любой другой - отрицательный
 
+    void setmas(const unsigned char[N]); //установление своего массива
+
+    static void setSign(unsigned char[N]);
+
+    const unsigned char (&getnumber())[N] { //получение самого числа как массива чисел
+        return number;
+    };
+
+    int getlen() const; //получение длины строки
 public:
-    X16();
+    X16();//конструктор по умолчанию
 
-    explicit X16(long int num);
+    explicit X16(long int num); //конструктор создающий число из константного значения
 
-    explicit X16(char *num);
+    explicit X16(char *num); //конструктор создающий число из строки
 
     ~X16();
 
-    friend ostream &operator<<(ostream &, X16);
+    friend ostream &operator <<(ostream &, X16); //вывод числа
 
-    friend istream &operator>>(istream &, X16);
+    friend istream &operator >>(istream &, X16 &); //ввод числа в виде строки
 
-    X16 operator+(X16);
+    X16 operator +(X16); //сложение чисел
 
-    X16 operator-(X16);
+    X16 operator -(X16); //вычетание чисел
 
-    X16 operator<<=(int);
+    X16 operator <<=(int); //сдвиг влево на int
 
-    X16 operator>>=(int);
+    X16 operator >>=(int); //сдвиг вправо на int
 
-    int getlen() const;
+    bool isEven(); //проверка на четность
 
-    unsigned char (&getnumber())[N];
-
-    void setmas(const unsigned char[N]);
-
-    bool isEven();
-
-    int compare(X16);
+    int compare(X16); // сравнение числе  1 - левый больше, -1 - правый больше, 0 одинаковы
 };
 
 

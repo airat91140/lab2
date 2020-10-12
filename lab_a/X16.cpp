@@ -94,11 +94,11 @@ ostream &X16::print(ostream &out) {
 istream &X16::input(istream &in) {
     char name[N * 2];
     in.getline(name, N * 2 - 1);
-     if (!in.good()) {
+    if (!in.good()) {
          in.clear();
          in.ignore(32767, '\n');
          throw invalid_argument("Wrong string");
-     }
+    }
     X16 num(name);
     *this = num;
     return in;
