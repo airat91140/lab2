@@ -37,7 +37,7 @@ public:
 
     ~X16();
 
-    friend ostream &operator <<(ostream &, X16); //вывод числа
+    friend ostream &operator <<(ostream &, const X16 &); //вывод числа
 
     friend istream &operator >>(istream &, X16 &); //ввод числа в виде строки
 

@@ -78,7 +78,7 @@ X16::X16(char *num) {
     }
 }
 
-ostream &operator <<(ostream &out, X16 num) {
+ostream &operator <<(ostream &out, const X16 &num) {
     if ((N * 2 - num.len) & 1) //выписываем первые буквы в зависмости от того находятся они в первой или второй половине
         out << hex << (unsigned int) (num.number[(N * 2 - num.len) / 2] & 0x0f);
     else

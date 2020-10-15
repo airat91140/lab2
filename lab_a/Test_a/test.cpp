@@ -195,4 +195,7 @@ TEST(X16Functions, TestExcepttions)
 	X16 a("ab");
     ASSERT_THROW(a.Lshift(-2), std::invalid_argument);
     ASSERT_THROW(a.Rshift(-2), std::invalid_argument);	
+	std::stringstream str;
+	str.str("aa a");
+	ASSERT_THROW(a.input(str), std::invalid_argument);
 }
