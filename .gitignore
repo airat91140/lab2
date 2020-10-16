@@ -5,6 +5,7 @@ CMakeScripts
 Testing
 Makefile
 **/googletest
+*.cbp
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
@@ -401,6 +402,8 @@ MigrationBackup/
 **/*.vcxproj
 
 **/cmake-build-debug
+
+**/cmake-build-release
 
 **/*.sln
 
