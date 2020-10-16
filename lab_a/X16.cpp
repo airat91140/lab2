@@ -1,7 +1,6 @@
 #include "X16.h"
 #include <cstdlib>
 #include <cstring>
-#include <cerrno>
 
 X16::X16() { //по-умолчанию нуль
     this->len = 1;
@@ -243,8 +242,8 @@ void X16::correctlen() {
     }
     if ((this->number[i] >> 4) == 0) //если число в левом байте пусто
         --this->len;
-    if (len == 0) {
-        ++len;
+    if (len <= 0) {
+        len = 1;
     }
 }
 

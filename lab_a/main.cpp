@@ -1,7 +1,6 @@
 #include <iostream>
 #include "X16.h"
 #include "functions.h"
-#include <sstream>
 
 using namespace std;
 

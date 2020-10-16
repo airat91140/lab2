@@ -1,7 +1,6 @@
-#include "pch.h"
-#include "../X16.h"
-#include "../X16.cpp"
+#include "gtest/gtest.h"
 #include <iostream>
+#include "X16.h"
 /*
 TEST(X16Constructor, DefaultConstructor)
 {
