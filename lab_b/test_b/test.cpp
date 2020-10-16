@@ -127,6 +127,10 @@ TEST(X16Functions, TestFunctions)
 	ASSERT_EQ(0, a1.compare((X16(-100046) - (X16(-46)))));
 	ASSERT_EQ(0, a1.compare((X16(-86000) - (X16(14000)))));
 
+	const X16 d1(150000);
+	const X16 d2(50000);
+	ASSERT_EQ(0, a.compare(d1 - d2));
+	
 	X16 b1("ABC0");
 	X16 c1("82BC");
 	b1 >>= 1;

@@ -104,7 +104,7 @@ istream &operator >>(istream &in, X16 &num) {
     return in;
 }
 
-X16 X16::operator +(X16 sec) {
+X16 X16::operator +(const X16 &sec) const {
     unsigned char a[N], b[N];
     dopoln(this->getnumber(), this->getlen(), a);//находим дополнительный код для обоих чисел
     dopoln(sec.getnumber(), sec.getlen(), b);
@@ -139,7 +139,7 @@ X16 X16::operator +(X16 sec) {
 }
 
 
-X16 X16::operator -(X16 sec) {
+X16 X16::operator -(X16 sec) const{
     if (sec.len & 1) //нечетное количество символов
         (sec.number[(N * 2 - sec.len) / 2]) ^= 0x08; //меняем знаковый бит на противоположный
     else
@@ -243,6 +243,8 @@ void X16::correctlen() {
     }
     if ((this->number[i] >> 4) == 0) //если число в левом байте пусто
         --this->len;
+    if (len == 0)
+	len = 1;
 }
 
 void X16::setmas(const unsigned char n[N]) {
@@ -252,7 +254,7 @@ void X16::setmas(const unsigned char n[N]) {
     correctlen();
 }
 
-unsigned char X16::getsign() {
+unsigned char X16::getsign() const{
     if (len & 1)
         return (getnumber()[(N * 2 - len) / 2]) & 0x08;
     else

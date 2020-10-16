@@ -17,13 +17,17 @@ private:
 
     void correctlen(); //корректирование длинны числа
 
-    inline unsigned char getsign(); //получение знака числа  0 - положительный, любой другой - отрицательный
+    inline unsigned char getsign() const; //получение знака числа  0 - положительный, любой другой - отрицательный
 
     void setmas(const unsigned char[N]); //установление своего массива
 
     static void setSign(unsigned char[N]);
 
     const unsigned char (&getnumber())[N] { //получение самого числа как массива чисел
+        return number;
+    };
+
+    const unsigned char(&getnumber() const)[N] { //получение самого числа как массива чисел
         return number;
     };
 
@@ -41,9 +45,9 @@ public:
 
     friend istream &operator >>(istream &, X16 &); //ввод числа в виде строки
 
-    X16 operator +(X16); //сложение чисел
+    X16 operator +(const X16 &) const; //сложение чисел
 
-    X16 operator -(X16); //вычетание чисел
+    X16 operator -(X16) const; //вычетание чисел
 
     X16 operator <<=(int); //сдвиг влево на int
 

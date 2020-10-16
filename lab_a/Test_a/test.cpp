@@ -110,12 +110,17 @@ TEST(X16Constructor, TestException)
 	ASSERT_ANY_THROW(X16("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 	ASSERT_THROW(X16(""), std::invalid_argument);
     ASSERT_THROW(X16("G"), std::invalid_argument);
-    ASSERT_THROW(X16("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"), std::invalid_argument);
+	ASSERT_THROW(X16("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"), std::invalid_argument);
 }
 
 TEST(X16Functions, TestFunctions)
 {
+
+	X16 gg("90");
+	X16 gg2("10");
+	ASSERT_EQ(0, (gg.add(gg2).compare(X16(0l))));
 	X16 a(100000);
+
 	ASSERT_EQ(0, a.compare((X16(20).add(X16(99980)))));
     ASSERT_EQ(0, a.compare((X16(100056).add(X16(-56)))));
     ASSERT_EQ(0, a.compare((X16(100046).subtract(X16(46)))));
@@ -193,9 +198,12 @@ TEST(X16Functions, TestFunctions)
 TEST(X16Functions, TestExcepttions)
 {
 	X16 a("ab");
-    ASSERT_THROW(a.Lshift(-2), std::invalid_argument);
-    ASSERT_THROW(a.Rshift(-2), std::invalid_argument);	
+	ASSERT_THROW(a.Lshift(-2), std::invalid_argument);
+	ASSERT_THROW(a.Rshift(-2), std::invalid_argument);	
 	std::stringstream str;
 	str.str("aa a");
+	ASSERT_THROW(a.input(str), std::invalid_argument);
+	str.str("aa");
+	str.setstate(std::ios_base::failbit);
 	ASSERT_THROW(a.input(str), std::invalid_argument);
 }

@@ -243,6 +243,9 @@ void X16::correctlen() {
     }
     if ((this->number[i] >> 4) == 0) //если число в левом байте пусто
         --this->len;
+    if (len == 0) {
+        ++len;
+    }
 }
 
 void X16::setmas(const unsigned char n[N]) {
