@@ -1,6 +1,8 @@
 #ifndef LAB2_FUNCTIONS_H
 #define LAB2_FUNCTIONS_H
+
 #include "X16.h"
+
 
 __declspec(selectany) const char *msgs[] = {"0. Quit",
                                             "1. Set number",

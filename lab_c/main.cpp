@@ -14,7 +14,7 @@ int main() {
         cout << errmsg;
         errmsg = (char *) "You are wrong. Repeat, please!\n";
         try {
-            num.input(cin);
+            cin >> num;
             rc = 1;
         }
         catch (exception &br) {

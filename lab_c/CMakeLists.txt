@@ -1,19 +1,18 @@
 cmake_minimum_required(VERSION 3.17)
-project(lab2_a)
+project(lab2_c)
 
 set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(lib)
+include_directories(lib)
 
-add_executable(lab2_a
+add_executable(lab2_c
         functions.cpp
         functions.h
         main.cpp
 )
 
-include_directories(lib)
-
-TARGET_LINK_LIBRARIES( lab2_a
+TARGET_LINK_LIBRARIES( lab2_c
         X16 )
 
-add_subdirectory(Test_a)
+add_subdirectory(test_c)

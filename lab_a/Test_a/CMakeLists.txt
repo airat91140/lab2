@@ -10,5 +10,4 @@ add_executable(Test_a
         test.cpp)
 
 target_link_libraries(Test_a gtest gtest_main)
-
-TARGET_LINK_LIBRARIES( Test_a X16a )
+TARGET_LINK_LIBRARIES(Test_a X16a)
