@@ -37,7 +37,7 @@ int Compare(X16 &);
 
 int IsEven(X16 &);
 
-__declspec(selectany) int (*fptr[])(X16 &) = {nullptr, SetNum, PrintNum, Add, Subtract, LShift, RShift, Compare, IsEven};
+//__declspec(selectany) int (*fptr[])(X16 &) = {nullptr, SetNum, PrintNum, Add, Subtract, LShift, RShift, Compare, IsEven};
 
 
 

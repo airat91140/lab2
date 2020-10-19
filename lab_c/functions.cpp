@@ -1,7 +1,7 @@
 #include "functions.h"
 #include <iostream>
 using namespace std;
-
+/*
 
 template<class T>
 void get_num(T &a) {
@@ -137,4 +137,4 @@ int IsEven(X16 &num) {
     else
         cout << "It is even" << endl;
     return 1;
-}
+}*/

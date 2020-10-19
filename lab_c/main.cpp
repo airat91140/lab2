@@ -6,7 +6,9 @@ using namespace std;
 
 
 int main() {
-    int rc;
+    X16 *a = new X16((char *)"12345");
+    cout << ((*a) >>= 3);
+    /*int rc;
     char *errmsg = (char *) "";
     X16 num;
     cout << "Enter your number:" << endl;
@@ -26,6 +28,6 @@ int main() {
     while ((rc = dialog(msgs, NMsgs))) {
         if (!fptr[rc](num))
             break;
-    }
+    }*/
     return 0;
 }

@@ -3,43 +3,50 @@
 
 #include <iostream>
 
-const int N = 10;
-
 using namespace std;
 
-void dopoln(const unsigned char [N], int, unsigned char [N]);
+void dopoln(const unsigned char *, int, unsigned char *, int);
 
 class X16 {
 private:
     int len; //длина числа
-    unsigned char number[N] = {0};
+    unsigned char *number = nullptr;
     //само число, в каждом байте - две цифры
 
-    void correctlen(); //корректирование длинны числа
+    void correctlen(int); //корректирование длинны числа
 
-    inline unsigned char getsign() const; //получение знака числа  0 - положительный, любой другой - отрицательный
+    void static setSign(unsigned char *, int);
 
-    void setmas(const unsigned char[N]); //установление своего массива
-
-    static void setSign(unsigned char[N]);
-
-    const unsigned char (&getnumber())[N] { //получение самого числа как массива чисел
+    const unsigned char *getnumber() { //получение самого числа как массива чисел
         return number;
     };
 
-    const unsigned char(&getnumber() const)[N] { //получение самого числа как массива чисел
+    const unsigned char *getnumber() const{ //получение самого числа как массива чисел
         return number;
     };
 
     int getlen() const; //получение длины строки
+
+    static int inline findmax(int a, int b) {
+        return a > b ? a : b;
+    }
+
 public:
-    X16();//конструктор по умолчанию
+    X16():len(1), number(new unsigned char[2]{0}) {};//конструктор по умолчанию
 
     explicit X16(long int num); //конструктор создающий число из константного значения
 
     explicit X16(char *num); //конструктор создающий число из строки
 
     ~X16();
+
+    X16(X16 &&) noexcept ;
+
+    X16(const X16 &);
+
+    X16 &operator = (const X16 &);
+
+    X16 &operator = (X16 &&) noexcept;
 
     friend ostream &operator <<(ostream &, const X16 &); //вывод числа
 
@@ -55,7 +62,7 @@ public:
 
     bool isEven(); //проверка на четность
 
-    int compare(X16); // сравнение числе  1 - левый больше, -1 - правый больше, 0 одинаковы
+  //  int compare(X16); // сравнение числе  1 - левый больше, -1 - правый больше, 0 одинаковы
 };
 
 
