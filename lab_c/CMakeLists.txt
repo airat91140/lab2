@@ -15,4 +15,4 @@ add_executable(lab2_c
 TARGET_LINK_LIBRARIES( lab2_c
         X16 )
 
-#add_subdirectory(test_c)
+add_subdirectory(test_c)

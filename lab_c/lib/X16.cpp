@@ -1,6 +1,4 @@
 #include "X16.h"
-#include <cstdlib>
-#include <cstring>
 
 X16::X16(const long num) {
     unsigned long temp = num > 0 ? num : -num; //берем модуль от числа
@@ -37,7 +35,7 @@ X16::X16(char *num) {
         num += 1;
         --len;
     }
-    number = new unsigned char[(len + 3) / 2];
+    number = new unsigned char[(len + 3) / 2] {0};
     for (int i = (int) strlen(num) - 1, j = 1; i >= 0; i -= 2) { //идем в цикле с конца строки
         char tmp[3]; // j нужно для контроляв какой байт записывать
         if (i > 0) { //случай когда есть возможность взять два символа строки
@@ -73,6 +71,15 @@ X16::X16(char *num) {
             number[(len + 3) / 2 - j] = res & 0xf; //записываем последний полубайт
             ++j;
         }
+    }
+    correctlen((len + 3) / 2);
+    if (len != strlen(num)) {
+        auto *tmp = new unsigned char[(len + 3) / 2];
+        for(int i = 0; i < (len + 3) / 2; ++i) {
+            tmp[(len + 3) / 2 - 1 - i] = number[(strlen(num) + 3) / 2 - 1 - i];
+        }
+        delete [] number;
+        number = tmp;
     }
     number[0] &= 0;
     if (sign == 1) {
@@ -201,7 +208,6 @@ X16 X16::operator <<=(int am) {
         len = 1;
         return *this;
     }
-    unsigned char sign = number[0];
     if ((am & 1) == 0) {
         for (int j = 1 + am / 2; j < (len + 3) / 2; ++j)
             number[j - am / 2] = number[j];
@@ -250,19 +256,20 @@ X16 X16::operator >>=(int am) {
     else {
         *this >>= am - 1;
         unsigned char tmpl = 0, tmpr = 0;
-        for (int j = 3; j < len + 3; ++j) {
-            if (j & 1) { //если цифра находится в левой половине байта
+        for (int j = 2; j < len + 2; ++j) {
+            if ((j & 1)) { //если цифра находится в правой половине байта
                 tmpr = number[j / 2] & 0x0f; //запоминаем стоявшее тут число
                 tmpr <<= 4; //делаем его подходящим для ставки в другую половину следующего байта
                 number[j / 2] &= 0xf0;
                 number[j / 2] |= tmpl; //вставляем предыдюю цифру
-            } else { //если цифра находится в правой половине байта
+            } else { //если цифра находится в левой половине байта
                 tmpl = number[j / 2] & 0xf0; //запоминаем стоявшее тут число
                 tmpl >>= 4; //делаем его подходящим для ставки в другую половину следующего байта
                 number[j / 2] &= 0x0f;
                 number[j / 2] |= tmpr; //вставляем предыдюю цифру
             }
         }
+        number[1] &= 0x0f;
         len -= 1;
         if (number[1] == 0) {
             auto *tmp = new unsigned char[(len + 3) / 2];
@@ -298,43 +305,44 @@ void X16::correctlen(int now_len) {
 bool X16::isEven() {
     return !(number[(len + 3) / 2 - 1] & 1);
 }
-/*
-int X16::compare(X16 sec) { // 1 - левый больше, -1 - правый больше, 0 одинаковы
-    unsigned char sign1 = this->getsign(), sign2 = sec.getsign(); //находим знаки чисел
-    if (sign1 == 0 && sign2 != 0)//проверяем, вдруг одно из чисел положительное, а другое отрицательное
+
+int X16::compare(const X16 &sec) { // 1 - левый больше, -1 - правый больше, 0 одинаковы
+    if (number[0] == 0 && sec.number[0] != 0)//проверяем, вдруг одно из чисел положительное, а другое отрицательное
         return 1;
-    if (sign1 != 0 && sign2 == 0)
+    if (number[0] != 0 && sec.number[0] == 0)
         return -1;
-    unsigned char num1[N], num2[N];
-    for (int i = 0; i < N; ++i) {
-        num1[i] = this->getnumber()[i];
-        num2[i] = sec.getnumber()[i];
+    if (len > sec.len) {
+        if (number[0] == 0)
+            return 1;
+        else
+            return -1;
     }
-    if (this->len & 1) //находим модули этих чисел, так как знаки у низх обязательно одиноковые
-        num1[(N * 2 - this->len) / 2] &= 0xf7;
-    else
-        num1[(N * 2 - this->len) / 2] &= 0x7f;
-    if (sec.len & 1)
-        num2[(N * 2 - sec.len) / 2] &= 0xf7;
-    else
-        num2[(N * 2 - sec.len) / 2] &= 0x7f;
-    for (int i = 0; i < N; ++i) { //сверяем числа побайтно
-        if (num1[i] > num2[i]) {
-            if (sign1 == 0) //для положительных
-                return 1;
-            else //для отрицательных
-                return -1;
-        }
-        if (num1[i] < num2[i]) {
-            if (sign1 == 0) //для положительных
-                return -1;
-            else //для отрицательных
-                return 1;
-        }
+    else if (len < sec.len) {
+        if (number[0] == 0)
+            return -1;
+        else
+            return 1;
     }
-    return 0;
+    else {
+        for (int i = 1; i < (len + 3) / 2; ++i) { //сверяем числа побайтно
+            if (number[i] > sec.number[i]) {
+                if (number[0] == 0) //для положительных
+                    return 1;
+                else //для отрицательных
+                    return -1;
+            }
+            if (number[i] < sec.number[i]) {
+                if (number[0] == 0) //для положительных
+                    return -1;
+                else //для отрицательных
+                    return 1;
+            }
+        }
+        return 0;
+
+    }
 }
-*/
+
 void X16::setSign(unsigned char *num, int size) {
     for (int i = 0; i < size; ++i) {
         if (num[i] != 0) { //находим первый ненулевой символ

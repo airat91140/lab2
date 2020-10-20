@@ -1,12 +1,11 @@
 #include "gtest/gtest.h"
 #include "X16.h"
-#include <iostream>
-/*
+
 TEST(X16Constructor, DefaultConstructor)
 {
 	X16 a1;
 	ASSERT_EQ(1, a1.getlen());
-	for (int i = 0; i < N; ++i) {
+	for (int i = 0; i < 2; ++i) {
 		ASSERT_EQ(0, a1.getnumber()[i]);
 	}
 }
@@ -15,42 +14,35 @@ TEST(X16Constructor, InitNumConstructors)
 {
 	X16 a2(0x3);
 	ASSERT_EQ(1, a2.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a2.getnumber()[i]);
-	}
-	ASSERT_EQ(0, a2.getnumber()[N - 1] & 0xf0);
-	ASSERT_EQ(3, a2.getnumber()[N - 1] & 0x0f);
+	ASSERT_EQ(0, a2.getnumber()[0]);
+	ASSERT_EQ(3, a2.getnumber()[1]);
 
 	X16 a3(0x14);
 	ASSERT_EQ(2, a3.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a3.getnumber()[i]);
-	}
-	ASSERT_EQ(0x14, a3.getnumber()[N - 1]);
+	ASSERT_EQ(0, a3.getnumber()[0]);
+	ASSERT_EQ(0x14, a3.getnumber()[1]);
 
 	X16 a4(28675); //0x7003
 	ASSERT_EQ(4, a4.getlen());
-	for (int i = 0; i < N - 2; ++i) {
-		ASSERT_EQ(0, a4.getnumber()[i]);
-	}
-	ASSERT_EQ(0x70, a4.getnumber()[N - 2]);
-	ASSERT_EQ(0x03, a4.getnumber()[N - 1]);
+	ASSERT_EQ(0, a4.getnumber()[0]);
+	ASSERT_EQ(0x70, a4.getnumber()[1]);
+	ASSERT_EQ(0x03, a4.getnumber()[2]);
 
 	X16 a5(-3);
 	ASSERT_EQ(1, a5.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a5.getnumber()[i]);
-	}
-	ASSERT_EQ(0, a5.getnumber()[N - 1] & 0xf0);
-	ASSERT_EQ(0xb, a5.getnumber()[N - 1] & 0x0f); //00001011
+	ASSERT_EQ(0x80, a5.getnumber()[0]);
+	ASSERT_EQ(0x3, a5.getnumber()[1]); //00001011
 
-	X16 a6(-235); //0x8eb
-	ASSERT_EQ(3, a6.getlen());
-	for (int i = 0; i < N - 2; ++i) {
-		ASSERT_EQ(0, a6.getnumber()[i]);
-	}
-	ASSERT_EQ(0x08, a6.getnumber()[N - 2]);
-	ASSERT_EQ(0xeb, a6.getnumber()[N - 1]);
+	X16 a6(-235); //-eb
+	ASSERT_EQ(2, a6.getlen());
+	ASSERT_EQ(0x80, a6.getnumber()[0]);
+	ASSERT_EQ(0xeb, a6.getnumber()[1]);
+
+    X16 a7(-24658); //-6052
+    ASSERT_EQ(4, a7.getlen());
+    ASSERT_EQ(0x80, a7.getnumber()[0]);
+    ASSERT_EQ(0x60, a7.getnumber()[1]);
+    ASSERT_EQ(0x52, a7.getnumber()[2]);
 }
 
 
@@ -58,58 +50,49 @@ TEST(X16Constructor, InitCharConstructors)
 {
 	X16 a2("3");
 	ASSERT_EQ(1, a2.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a2.getnumber()[i]);
-	}
-	ASSERT_EQ(0, a2.getnumber()[N - 1] & 0xf0);
-	ASSERT_EQ(3, a2.getnumber()[N - 1] & 0x0f);
+	ASSERT_EQ(0, a2.getnumber()[0]);
+	ASSERT_EQ(0x03, a2.getnumber()[1]);
 
 	X16 a3("14");
 	ASSERT_EQ(2, a3.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a3.getnumber()[i]);
-	}
-	ASSERT_EQ(0x14, a3.getnumber()[N - 1]);
+	ASSERT_EQ(0, a3.getnumber()[0]);
+	ASSERT_EQ(0x14, a3.getnumber()[1]);
 
 	X16 a4("7003");
 	ASSERT_EQ(4, a4.getlen());
-	for (int i = 0; i < N - 2; ++i) {
-		ASSERT_EQ(0, a4.getnumber()[i]);
-	}
-	ASSERT_EQ(0x70, a4.getnumber()[N - 2]);
-	ASSERT_EQ(0x03, a4.getnumber()[N - 1]);
+    ASSERT_EQ(0, a4.getnumber()[0]);
+    ASSERT_EQ(0x70, a4.getnumber()[1]);
+	ASSERT_EQ(0x03, a4.getnumber()[2]);
 
-	X16 a5("b");
+	X16 a5("-b");
 	ASSERT_EQ(1, a5.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a5.getnumber()[i]);
-	}
-	ASSERT_EQ(0, a5.getnumber()[N - 1] & 0xf0);
-	ASSERT_EQ(11, a5.getnumber()[N - 1] & 0x0f);
+	ASSERT_EQ(0x80, a5.getnumber()[0] );
+	ASSERT_EQ(0xb, a5.getnumber()[1]);
 
-	X16 a6("8eb");
+	X16 a6("-8eb");
 	ASSERT_EQ(3, a6.getlen());
-	for (int i = 0; i < N - 2; ++i) {
-		ASSERT_EQ(0, a6.getnumber()[i]);
-	}
-	ASSERT_EQ(0x08, a6.getnumber()[N - 2]);
-	ASSERT_EQ(0xeb, a6.getnumber()[N - 1]);
+    ASSERT_EQ(0x80, a6.getnumber()[0]);
+    ASSERT_EQ(0x08, a6.getnumber()[1]);
+	ASSERT_EQ(0xeb, a6.getnumber()[2]);
 
 	X16 a7("0b");
-	ASSERT_EQ(2, a7.getlen());
-	for (int i = 0; i < N - 1; ++i) {
-		ASSERT_EQ(0, a7.getnumber()[i]);
-	}
-	ASSERT_EQ(0x0b, a7.getnumber()[N - 1]);
-}*/
+	ASSERT_EQ(1, a7.getlen());
+    ASSERT_EQ(0, a7.getnumber()[0]);
+    ASSERT_EQ(0x0b, a7.getnumber()[1]);
+}
+
+TEST(X16Constructor, TestCopy)
+{
+    X16 aa("abcdef");
+    ASSERT_EQ(0, aa.compare(X16("abcdef")));
+}
+
 TEST(X16Constructor, TestException)
 {
 	ASSERT_ANY_THROW(X16(""));
 	ASSERT_ANY_THROW(X16("G"));
-	ASSERT_ANY_THROW(X16("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 	ASSERT_THROW(X16(""), std::invalid_argument);
 	ASSERT_THROW(X16("G"), std::invalid_argument);
-	ASSERT_THROW(X16("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"), std::invalid_argument);
 }
 
 TEST(X16Functions, TestFunctions)
@@ -129,56 +112,89 @@ TEST(X16Functions, TestFunctions)
 	const X16 d1(150000);
 	const X16 d2(50000);
 	ASSERT_EQ(0, a.compare(d1 - d2));
-	
-	X16 b1("ABC0");
-	X16 c1("82BC");
-	b1 >>= 1;
-	ASSERT_EQ(0, b1.compare(c1));
+    {
+        X16 b1("-ABC0");
+        X16 c1("-ABC");
+        b1 >>= 1;
+        ASSERT_EQ(0, b1.compare(c1));
 
-	X16 b4("ABC0");
-	X16 c4("802B");
-	b4 >>= 2;
-	ASSERT_EQ(0, b4.compare(c4));
+        X16 b4("-ABC0");
+        X16 c4("-AB");
+        b4 >>= 2;
+        ASSERT_EQ(0, b4.compare(c4));
 
-	X16 b5("ABC0");
-	X16 c5("8002");
-	b5 >>= 3;
-	ASSERT_EQ(0, b5.compare(c5));
+        X16 b5("-ABC0");
+        X16 c5("-A");
+        b5 >>= 3;
+        ASSERT_EQ(0, b5.compare(c5));
 
-	X16 b3("FFFF");
-	X16 c3("8000");
-	b3 >>= 15;
-	ASSERT_EQ(0, b3.compare(c3));
+        X16 b3("-FFFF");
+        X16 c3("0");
+        b3 >>= 15;
+        ASSERT_EQ(0, b3.compare(c3));
 
-	X16 b6("0ABC0");
-	X16 c6("00000");
-	b6 >>= 34;
-	ASSERT_EQ(0, b6.compare(c6));
+        X16 b6("ABC0");
+        X16 c6("0");
+        b6 >>= 34;
+        ASSERT_EQ(0, b6.compare(c6));
 
-	X16 b2("ABC0");
-	X16 c2("BC00");
-	b2 <<= 1;
-	ASSERT_EQ(0, b2.compare(c2));
+        X16 b2("-ABC0");
+        X16 c2("-BC00");
+        b2 <<= 1;
+        ASSERT_EQ(0, b2.compare(c2));
 
-	X16 b7("ABC0");
-	X16 c7("C000");
-	b7 <<= 2;
-	ASSERT_EQ(0, b7.compare(c7));
+        X16 b7("-ABC0");
+        X16 c7("-C000");
+        b7 <<= 2;
+        ASSERT_EQ(0, b7.compare(c7));
 
-	X16 b8("ABCD");
-	X16 c8("D000");
-	b8 <<= 3;
-	ASSERT_EQ(0, b8.compare(c8));
+        X16 b8("-ABCD");
+        X16 c8("-D000");
+        b8 <<= 3;
+        ASSERT_EQ(0, b8.compare(c8));
 
-	X16 b9("FFFF");
-	X16 c9("8000");
-	b9 <<= 15;
-	ASSERT_EQ(0, b9.compare(c9));
+        X16 b9("-FFFF");
+        X16 c9("0");
+        b9 <<= 15;
+        ASSERT_EQ(0, b9.compare(c9));
 
-	X16 b10("0ABC0");
-	X16 c10("00000");
-	b10 <<= 34;
-	ASSERT_EQ(0, b10.compare(c10));
+        X16 b10("ABC0");
+        X16 c10("0");
+        b10 <<= 34;
+        ASSERT_EQ(0, b10.compare(c10));
+    }
+
+    {
+        X16 b1("ABC0");
+        X16 c1("ABC");
+        b1 >>= 1;
+        ASSERT_EQ(0, b1.compare(c1));
+
+        X16 b4("ABC0");
+        X16 c4("AB");
+        b4 >>= 2;
+        ASSERT_EQ(0, b4.compare(c4));
+
+        X16 b5("ABC0");
+        X16 c5("A");
+        b5 >>= 3;
+        ASSERT_EQ(0, b5.compare(c5));
+
+        X16 b2("ABC0");
+        X16 c2("BC00");
+        b2 <<= 1;
+        ASSERT_EQ(0, b2.compare(c2));
+
+        X16 b7("ABC0");
+        X16 c7("C000");
+        b7 <<= 2;
+        ASSERT_EQ(0, b7.compare(c7));
+
+        X16 b8("ABCD");
+        X16 c8("D000");
+        b8 <<= 3;
+        ASSERT_EQ(0, b8.compare(c8));
+    }
 
 	ASSERT_EQ(true, X16(0L).isEven());
 	ASSERT_EQ(true, X16("8").isEven());
@@ -198,4 +214,9 @@ TEST(X16Functions, TestExcepttions)
 	X16 a("ab");
 	ASSERT_THROW(a <<= -2, std::invalid_argument);
 	ASSERT_THROW(a >>= -2, std::invalid_argument);
+}
+
+int main() {
+    testing::InitGoogleTest();
+    return RUN_ALL_TESTS();
 }

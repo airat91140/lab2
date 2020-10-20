@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(Test_с)
+project(test_с)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -11,4 +11,4 @@ add_executable(test_c
 
 target_link_libraries(test_c gtest gtest_main)
 
-TARGET_LINK_LIBRARIES( test_c X16c )
+TARGET_LINK_LIBRARIES( test_c X16 )

@@ -16,7 +16,7 @@ private:
     void correctlen(int); //корректирование длинны числа
 
     void static setSign(unsigned char *, int);
-
+public:
     const unsigned char *getnumber() { //получение самого числа как массива чисел
         return number;
     };
@@ -26,7 +26,7 @@ private:
     };
 
     int getlen() const; //получение длины строки
-
+private:
     static int inline findmax(int a, int b) {
         return a > b ? a : b;
     }
@@ -62,7 +62,7 @@ public:
 
     bool isEven(); //проверка на четность
 
-  //  int compare(X16); // сравнение числе  1 - левый больше, -1 - правый больше, 0 одинаковы
+    int compare(const X16 &); // сравнение числе  1 - левый больше, -1 - правый больше, 0 одинаковы
 };
 
 
