@@ -1,4 +1,6 @@
 #include "X16.h"
+#include <cstring>
+#include <iostream>
 
 X16::X16(const long num) {
     unsigned long temp = num > 0 ? num : -num; //берем модуль от числа
@@ -144,8 +146,7 @@ istream &operator >>(istream &in, X16 &num) {
          in.ignore(32767, '\n');
          throw invalid_argument("Wrong string");
      }
-    X16 x16(name);
-    num = x16;
+    num = X16(name);
     return in;
 }
 
@@ -177,6 +178,7 @@ X16 X16::operator +(const X16 &sec) const {
     sign = a[0];
     a[0] &= 0;
     X16 result;
+    delete [] result.number;
     result.number = a;
     result.correctlen(length);
     if (sign)
@@ -253,10 +255,10 @@ X16 X16::operator >>=(int am) {
         len -= am;
         number = tmp;
     }
-    else {
-        *this >>= am - 1;
+    else {                 // 00 00 45 67
+        *this >>= am - 1;  // 00 04 56 78 90
         unsigned char tmpl = 0, tmpr = 0;
-        for (int j = 2; j < len + 2; ++j) {
+        for (int j = 2; j < len + 3; ++j) {
             if ((j & 1)) { //если цифра находится в правой половине байта
                 tmpr = number[j / 2] & 0x0f; //запоминаем стоявшее тут число
                 tmpr <<= 4; //делаем его подходящим для ставки в другую половину следующего байта

@@ -1,5 +1,7 @@
 #include "functions.h"
 #include "X16.h"
+#include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
