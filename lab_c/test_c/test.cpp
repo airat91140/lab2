@@ -1,6 +1,10 @@
 #include "gtest/gtest.h"
 #include "X16.h"
 
+#ifdef __STRICT_ANSI__
+#undef __STRICT_ANSI__
+#endif
+
 TEST(X16Constructor, DefaultConstructor)
 {
 	X16 a1;
@@ -112,7 +116,7 @@ TEST(X16Functions, TestFunctions)
 	const X16 d1(150000);
 	const X16 d2(50000);
 	ASSERT_EQ(0, a.compare(d1 - d2));
-    {
+
         X16 b1("-ABC0");
         X16 c1("-ABC");
         b1 >>= 1;
@@ -162,42 +166,42 @@ TEST(X16Functions, TestFunctions)
         X16 c10("0");
         b10 <<= 34;
         ASSERT_EQ(0, b10.compare(c10));
-    }
 
-    {
-        X16 b1("ABC0");
-        X16 c1("ABC");
-        b1 >>= 1;
-        ASSERT_EQ(0, b1.compare(c1));
 
-        X16 b4("ABC0");
-        X16 c4("AB");
-        b4 >>= 2;
-        ASSERT_EQ(0, b4.compare(c4));
 
-        X16 b5("ABC0");
-        X16 c5("A");
-        b5 >>= 3;
-        ASSERT_EQ(0, b5.compare(c5));
+        X16 b11("ABc");
+        X16 c11("AB");
+        b11 >>= 1;
+        ASSERT_EQ(0, b11.compare(c11));
 
-        X16 b2("ABC0");
-        X16 c2("BC00");
-        b2 <<= 1;
-        ASSERT_EQ(0, b2.compare(c2));
+        X16 b41("ABC0");
+        X16 c41("AB");
+        b41 >>= 2;
+        ASSERT_EQ(0, b41.compare(c41));
 
-        X16 b7("ABC0");
-        X16 c7("C000");
-        b7 <<= 2;
-        ASSERT_EQ(0, b7.compare(c7));
+        X16 b51("ABC0");
+        X16 c51("A");
+        b51 >>= 3;
+        ASSERT_EQ(0, b51.compare(c51));
 
-        X16 b8("ABCD");
-        X16 c8("D000");
-        b8 <<= 3;
-        ASSERT_EQ(0, b8.compare(c8));
-    }
+        X16 b21("ABC0");
+        X16 c21("BC00");
+        b21 <<= 1;
+        ASSERT_EQ(0, b21.compare(c21));
+
+        X16 b71("ABC0");
+        X16 c71("C000");
+        b71 <<= 2;
+        ASSERT_EQ(0, b71.compare(c71));
+
+        X16 b81("ABCD");
+        X16 c81("D000");
+        b81 <<= 3;
+        ASSERT_EQ(0, b81.compare(c81));
+
 
 	ASSERT_EQ(true, X16(0L).isEven());
-	ASSERT_EQ(true, X16("8").isEven());
+	ASSERT_EQ(false, X16("9").isEven());
 
 	ASSERT_EQ(1, X16(286).compare(X16(13)));
 	ASSERT_EQ(1, X16(286).compare(X16(-13)));

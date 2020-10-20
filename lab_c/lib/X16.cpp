@@ -255,10 +255,10 @@ X16 X16::operator >>=(int am) {
         len -= am;
         number = tmp;
     }
-    else {                 // 00 00 45 67
-        *this >>= am - 1;  // 00 04 56 78 90
+    else {
+        *this >>= am - 1;
         unsigned char tmpl = 0, tmpr = 0;
-        for (int j = 2; j < len + 3; ++j) {
+        for (int j = 2; j < ((len & 1) ?  len + 3 : len + 2); ++j) {
             if ((j & 1)) { //если цифра находится в правой половине байта
                 tmpr = number[j / 2] & 0x0f; //запоминаем стоявшее тут число
                 tmpr <<= 4; //делаем его подходящим для ставки в другую половину следующего байта
@@ -387,5 +387,5 @@ void dopoln(const unsigned char *num, int len1, unsigned char *dop, int len2) {
 
 
 X16::~X16() {
-    delete [] number;
+    delete[] number;
 }
