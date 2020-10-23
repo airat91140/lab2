@@ -31,7 +31,7 @@ X16::X16(char *num) {
     char sign = 0;
     if (strlen(num) < 1)
         throw invalid_argument("Too short string");
-    len = static_cast<int>(strlen(num));
+    len = strlen(num);
     if (num[0] == '-') {
         sign = 1;
         num += 1;

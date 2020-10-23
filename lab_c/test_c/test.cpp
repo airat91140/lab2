@@ -89,6 +89,8 @@ TEST(X16Constructor, TestCopy)
 {
     X16 aa("abcdef");
     ASSERT_EQ(0, aa.compare(X16("abcdef")));
+    X16 ab("-abcdef");
+    ASSERT_EQ(0, ab.compare(X16("-abcdef")));
 }
 
 TEST(X16Constructor, TestException)
