@@ -5,10 +5,11 @@
 
 using namespace std;
 
-void dopoln(const unsigned char *, int, unsigned char *, int);
 
 class X16 {
 private:
+    static void dopoln(const unsigned char *, int, unsigned char *, int);
+
     int len; //длина числа
     unsigned char *number = nullptr;
     //само число, в каждом байте - две цифры

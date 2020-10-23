@@ -359,7 +359,7 @@ void X16::setSign(unsigned char *num, int size) {
     }
 }
 
-void dopoln(const unsigned char *num, int len1, unsigned char *dop, int len2) {
+void X16::dopoln(const unsigned char *num, int len1, unsigned char *dop, int len2) {
     if (num[0] == 0) {//если число положительное, то просто перекопируем его
         for (int i = 0; i < len1; ++i)
             dop[len2 - i - 1] = num[len1 - i - 1];
