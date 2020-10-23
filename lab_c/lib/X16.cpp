@@ -94,9 +94,10 @@ X16::X16(const X16 &num): len(num.len) {
     for (int i = 0; i < (len + 3) / 2; ++i)
         number[i] = num.number[i];
 }
-
+//сделать проверки везде чтобы len != 0
 X16::X16(X16 &&num)noexcept: len(num.len), number(num.number) {
     num.number = nullptr;
+    num.len = 0;
 }
 
 X16 &X16::operator = (X16 &&num)  noexcept {
@@ -204,35 +205,36 @@ X16 X16::operator -(X16 sec) const {
 X16 X16::operator <<=(int am) {
     if (am < 0)
         throw invalid_argument("Wrong argument");
-    if (am >= len) {
-        delete [] number;
-        number = new unsigned char [2] {0};
-        len = 1;
-        return *this;
-    }
     if ((am & 1) == 0) {
-        for (int j = 1 + am / 2; j < (len + 3) / 2; ++j)
-            number[j - am / 2] = number[j];
-        if (len & 1)
-            number[1] &= 0x0f;
-        for (int i = (len + 3) / 2 - am / 2; i < (len + 3) / 2; ++i)
-            number[i] = 0;
+        auto tmp = new unsigned char[(len + 3) / 2 + am / 2];
+        for (int j = 0; j < (len + 3) / 2; ++j)
+            tmp[j] = number[j];
+        for (int j = (len + 3) / 2; j < (len + 3) / 2 + am / 2; ++j)
+            tmp[j] = 0;
+        delete [] number;
+        number = tmp;
+        len += am;
     } else {
         *this <<= am - 1;
         unsigned char tmpl = 0, tmpr = 0;
-        for (int j = 0; j < len; ++j) {
+        auto tmp = new unsigned char[(len + 4) / 2] {0};
+        for (int j = 0; j <= len; ++j) {
             if (j & 1) { //если цифра находится в левой половине байта
                 tmpl = number[(len + 3) / 2 - 1 - j / 2] & 0xf0; //запоминаем стоявшее тут число
                 tmpl >>= 4; //делаем его подходящим для ставки в другую половину следующего байта
-                number[(len + 3) / 2 - 1 - j / 2] &= 0x0f;
-                number[(len + 3) / 2 - 1 - j / 2] |= tmpr; //вставляем предыдюю цифру
+                tmp[(len + 4) / 2 - 1 - j / 2] &= 0x0f;
+                tmp[(len + 4) / 2 - 1 - j / 2] |= tmpr; //вставляем предыдюю цифру
             } else { //если цифра находится в правой половине байта
                 tmpr = number[(len + 3) / 2 - 1 - j / 2] & 0x0f; //запоминаем стоявшее тут число
                 tmpr <<= 4; //делаем его подходящим для ставки в другую половину следующего байта
-                number[(len + 3) / 2 - 1 - j / 2] &= 0xf0;
-                number[(len + 3) / 2 - 1 - j / 2] |= tmpl;  //вставляем предыдюю цифру
+                tmp[(len + 4) / 2 - 1 - j / 2] &= 0xf0;
+                tmp[(len + 4) / 2 - 1 - j / 2] |= tmpl;  //вставляем предыдюю цифру
             }
         }
+        tmp[0] = number[0];
+        len += 1;
+        delete [] number;
+        number = tmp;
     }
     return *this;
 }
