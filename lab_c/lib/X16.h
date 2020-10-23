@@ -52,7 +52,7 @@ public:
     friend ostream &operator <<(ostream &, const X16 &); //вывод числа
 
     friend istream &operator >>(istream &, X16 &); //ввод числа в виде строки
-
+//число можно вводить как например "abc" (положительное) и "-abc" (отрицательное), но "+abc" вызовет исколючение
     X16 operator +(const X16 &) const; //сложение чисел
 
     X16 operator -(X16) const; //вычетание чисел
