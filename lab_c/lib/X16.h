@@ -21,11 +21,11 @@ public:
         return number;
     };
 
-    const unsigned char *getnumber() const{ //получение самого числа как массива чисел
+    [[nodiscard]] const unsigned char *getnumber() const{ //получение самого числа как массива чисел
         return number;
     };
 
-    int getlen() const; //получение длины строки
+    [[nodiscard]] int getlen() const; //получение длины строки
 private:
     static int inline findmax(int a, int b) {
         return a > b ? a : b;

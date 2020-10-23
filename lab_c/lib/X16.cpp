@@ -3,7 +3,7 @@
 #include <iostream>
 
 X16::X16(const long num) {
-    unsigned long temp = num > 0 ? num : -num; //берем модуль от числа
+    auto temp = (unsigned long) (num > 0 ? num : -num); //берем модуль от числа
     number = new unsigned char[sizeof(long)];
     for (int i = 0; i < sizeof(long); ++i) {
         unsigned char fig;
@@ -31,7 +31,7 @@ X16::X16(char *num) {
     char sign = 0;
     if (strlen(num) < 1)
         throw invalid_argument("Too short string");
-    len = strlen(num);
+    len = static_cast<int>(strlen(num));
     if (num[0] == '-') {
         sign = 1;
         num += 1;
