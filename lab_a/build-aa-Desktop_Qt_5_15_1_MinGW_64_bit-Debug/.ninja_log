@@ -1,0 +1,17 @@
+# ninja log v5
+2	1852	6256744676190998	CMakeFiles/lab2_a.dir/main.cpp.obj	5c553a7555de1829
+7	1950	6256744677118526	CMakeFiles/lab2_a.dir/functions.cpp.obj	52447fed1ba7b221
+10	2026	6256744678145773	lib/CMakeFiles/X16.dir/X16.cpp.obj	451f3d1be16054ec
+2026	4093	6256744698790592	lib/libX16.a	1547a5b369223f86
+20	4227	6256744701273955	Test_a/test/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	2f2e7240b70da52e
+13	4499	6256744703946814	Test_a/CMakeFiles/Test_a.dir/test.cpp.obj	3eb8da9de59441a3
+1950	4867	6256744707666874	Test_a/test/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	b9cddea27218a6c7
+4094	5143	6256744710309798	lab2_a.exe	cd36c61703d2dfe3
+31	6261	6256744721829002	Test_a/test/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	1a6328d5e9b5e1d2
+1946	11785	6256744776969139	Test_a/test/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	67626040a3b24c6e
+11788	16302	6256744822250068	lib/libgtestd.a	8164b7a9f97e9a35
+16305	16420	6256744823388211	lib/libgtest_maind.a	3cbc58ee407048d8
+16303	17059	6256744829881149	lib/libgmockd.a	7d7f2a15425149ab
+17060	17180	6256744830997841	lib/libgmock_maind.a	ba9bf23520ab3a95
+3	613	6256745261817982	build.ninja	897613eed8362472
+7	5762	6256745320369009	Test_a/Test_a.exe	7dda41a2933d5589

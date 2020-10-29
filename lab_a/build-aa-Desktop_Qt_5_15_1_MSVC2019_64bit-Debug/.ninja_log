@@ -1,0 +1,18 @@
+# ninja log v5
+11	3117	625674395	lib/CMakeFiles/X16.dir/X16.cpp.obj	645fbbf20d34aa0f
+7	3134	625674395	CMakeFiles/lab2_a.dir/functions.cpp.obj	69b21a89dc09c394
+2	3162	625674395	CMakeFiles/lab2_a.dir/main.cpp.obj	363bc36fbe9bfb19
+14	3607	625674396	Test_a/CMakeFiles/Test_a.dir/test.cpp.obj	f930b48788f985ff
+3124	3919	625674396	lib/X16.lib	dfbc2f37d0a083a2
+22	4866	625674397	Test_a/test/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock-all.cc.obj	bc743ddc7fab2ef5
+3607	6484	625674398	Test_a/test/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	dbcf48fd3e02ab43
+3144	7008	625674399	Test_a/test/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	73db43ead4d2760a
+3920	7234	625674399	lab2_a.exe	9cf31c974857200e
+6484	9449	625674401	Test_a/test/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	b70ef0684c1aa6ea
+3162	9776	625674402	Test_a/test/googletest/googlemock/CMakeFiles/gmock.dir/__/googletest/src/gtest-all.cc.obj	5f2b7b8dcc6e4fb2
+19	9783	625674402	Test_a/test/googletest/googlemock/CMakeFiles/gmock_main.dir/__/googletest/src/gtest-all.cc.obj	b787ae879399c615
+9776	10309	625674402	lib/gmockd.lib	5761f1382a60c64e
+9784	10315	625674402	lib/gmock_maind.lib	d2103f21e8a2c004
+4866	10564	625674402	Test_a/test/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	efa02ce2cd2e6e21
+10564	10726	625674403	lib/gtestd.lib	a63b6567ebec23f4
+10726	10773	625674403	lib/gtest_maind.lib	13428a2c41718694

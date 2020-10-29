@@ -1,0 +1,12 @@
+.
+lib
+Test_a/test/googletest/googlemock/include/gmock
+Test_a/test/googletest/googlemock/include/gmock/internal
+Test_a/test/googletest/googlemock/include/gmock/internal/custom
+Test_a/test/googletest/googlemock/test
+Test_a/test/googletest/googletest/include/gtest
+Test_a/test/googletest/googletest/include/gtest/internal
+Test_a/test/googletest/googletest/include/gtest/internal/custom
+Test_a/test/googletest/googletest/samples
+Test_a/test/googletest/googletest/src
+Test_a/test/googletest/googletest/test
