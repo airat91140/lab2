@@ -410,3 +410,7 @@ MigrationBackup/
 **/CMakeList.txt
 
 **/*.filters
+
+**/build-bonus-Desktop_Qt_5_15_1_MSVC2019_64bit-Debug
+
+**/build-bonus-Desktop_Qt_5_15_1_MinGW_64_bit-Debug
