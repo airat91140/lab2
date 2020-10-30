@@ -20,8 +20,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
 void MainWindow::on_pushButton_clicked()
 {
     if (ui->first_color->text().length() != 6 || ui->second_color->text().length() != 6) {
@@ -50,6 +48,4 @@ void MainWindow::on_pushButton_clicked()
     ui->result_pic->setStyleSheet("background-color: #" + QString::fromStdString(trueHex(result, str).str()));
     ui->first_pic->setStyleSheet("background-color: #" + QString::fromStdString(trueHex(first, str).str()));
     ui->second_pic->setStyleSheet("background-color: #" + QString::fromStdString(trueHex(second, str).str()));
-
-
 }
