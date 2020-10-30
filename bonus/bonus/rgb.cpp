@@ -34,3 +34,17 @@ RGB RGB::operator+(const RGB &sec) const {
     result.G = G + sec.G;
     return result;
 }
+
+RGB::RGB(char num[7]) {
+    B = num + 4;
+    if (B.Compare(0) == -1)
+        throw std::invalid_argument("Invalid Hex");
+    num[4] = '\0';
+    G = num + 2;
+    if (G.Compare(0) == -1)
+        throw std::invalid_argument("Invalid Hex");
+    num[2] = '\0';
+    R = num;
+    if (R.Compare(0) == -1)
+        throw std::invalid_argument("Invalid Hex");
+}

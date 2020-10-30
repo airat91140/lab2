@@ -8,13 +8,7 @@ struct RGB {
 
     RGB(): R(0), G(0), B(0) {};
 
-    RGB(char num[7]) {
-        B = num + 4;
-        num[4] = '\0';
-        G = num + 2;
-        num[2] = '\0';
-        R = num;
-    }
+    RGB(char [7]);
 
     RGB operator +(const RGB &) const;
 };
