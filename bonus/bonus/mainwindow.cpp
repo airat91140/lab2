@@ -4,7 +4,6 @@
 #include "QMessageBox"
 #include "Hex.h"
 #include <sstream>
-#include "QDebug"
 #include "rgb.h"
 
 

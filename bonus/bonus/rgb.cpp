@@ -26,3 +26,11 @@ std::stringstream &trueHex(const RGB &color, std::stringstream &str) {
     str << color.B;
     return str;
 }
+
+RGB RGB::operator+(const RGB &sec) const {
+    RGB result;
+    result.R = R + sec.R;
+    result.B = B + sec.B;
+    result.G = G + sec.G;
+    return result;
+}

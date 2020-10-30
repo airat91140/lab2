@@ -16,13 +16,7 @@ struct RGB {
         R = num;
     }
 
-    RGB operator +(const RGB sec) const{
-        RGB result;
-        result.R = R + sec.R;
-        result.B = B + sec.B;
-        result.G = G + sec.G;
-        return result;
-    }
+    RGB operator +(const RGB &) const;
 };
 
 RGB average(const RGB &, const RGB &);

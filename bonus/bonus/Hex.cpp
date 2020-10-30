@@ -42,7 +42,7 @@ namespace H16_3 {
 			number = new char[2];
 			number[0] = '0';
 			number[1] = '0';
-			delete a;
+            delete a;
 		}
 	}
 	Hex::Hex(const Hex& A) {
